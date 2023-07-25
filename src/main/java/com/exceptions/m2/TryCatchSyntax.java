@@ -11,30 +11,25 @@ public class TryCatchSyntax {
 
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("basic_try_demo.txt"));
+            br = new BufferedReader(new FileReader("basic_try_emo.txt"));
 
             // read line by line
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             System.err.format("FileNotFoundException: %s%n", e);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
-        }
-        finally {
+        } finally {
             try {
                 if(br != null) {
                     br.close();
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
     }
 }

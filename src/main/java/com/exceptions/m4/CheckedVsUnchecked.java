@@ -7,7 +7,11 @@ public class CheckedVsUnchecked {
 
     public static void main(String[] args) {
         doThis();
-//        doThat();
+        try {
+            doThat();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("This will not run");
     }
 
